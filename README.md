@@ -1,108 +1,105 @@
-🎯 Projeto: API para Gestão Escolar
+🎯 **Projeto: API de Gerenciamento Escolar**
 
-Este repositório apresenta uma API REST desenvolvida em Flask, organizada seguindo o padrão MVC. Ela disponibiliza operações CRUD para Professores, Turmas e Alunos, utilizando SQLite como banco de dados por meio do SQLAlchemy. Além disso, conta com documentação automática via Swagger (Flasgger) e pode ser executada em ambiente Docker.
+Este repositório apresenta uma **API REST** desenvolvida com **Flask**, estruturada no padrão **MVC**, oferecendo CRUD para Professores, Turmas e Alunos. A aplicação usa **SQLite** através do **SQLAlchemy**, possui documentação automática com **Swagger (Flasgger)** e pode ser executada em ambiente **Docker**.
 
-Para registrar uma turma é necessário já existir ao menos um professor, e para cadastrar um aluno é preciso que haja uma turma previamente criada.
+Para criar uma turma é obrigatório existir pelo menos um professor.
 
-🌸 Integrantes
+Para cadastrar um aluno é necessário já haver uma turma criada.
+
+🌸 **Integrantes**
 
 Alessandra Shiguemori | 2404075
 
-🛠️ Ferramentas utilizadas
+🛠️ **Tecnologias utilizadas**
 
-Flask
+- Flask
 
-Flask-SQLAlchemy
+- Flask-SQLAlchemy
 
-Flasgger / Swagger UI
+- Flasgger (Swagger UI)
 
-SQLite
+- SQLite
 
-Docker
+- Docker
 
-📂 Estrutura do Projeto (Padrão MVC)
+📂 **Estrutura do Projeto (MVC)**
+
 /projeto
 │── app.py                # Arquivo principal da aplicação
-│── requirements.txt      # Lista de dependências
-│── Dockerfile            # Configuração para gerar o container
-│── /model                # Modelos e conexão (SQLAlchemy)
+│── requirements.txt       # Dependências
+│── Dockerfile             # Configuração Docker
+│── /model                 # Modelos e banco de dados (SQLAlchemy)
 │    ├── database.py
 │    ├── professor.py
 │    ├── turma.py
 │    └── aluno.py
-│── /controller           # Lógica de negócio
+│── /controller            # Lógica e regras de negócio
 │    ├── professor_controller.py
 │    ├── turma_controller.py
 │    └── aluno_controller.py
-│── /routes               # Arquivos de rotas da API
+│── /routes                # Rotas da API
 │    ├── professor_routes.py
 │    ├── turma_routes.py
 │    └── aluno_routes.py
-│── /static               # Arquivos bootstrap
-│── /templates            # HTMLs utilizados
-└── README.md             # Documento de referência
+│── /static                # Arquivos bootstrap
+│── /templates             # Templates HTML
+└── README.md              # Documentação
 
-🚀 Passo a passo para executar o projeto
-1. Clonar o repositório
-git clone https://github.com/samea-jesus0/flask-academic-crud.git
+🚀 **Como rodar o projeto**
+
+1. Clone o repositório
+
+bash
+git clone https://github.com/foxczie/flask-academic-crud.git
 cd flask-mvc-api
 
-2. Criar e ativar o ambiente virtual (se optar por não usar Docker)
+2. Criar e ativar ambiente virtual (opcional, se não for usar Docker)
+
+bash
 python -m venv venv
 source venv/bin/activate  # Linux/Mac
 venv\Scripts\activate     # Windows
 
-3. Instalar as dependências
+3. Instalar dependências
+
+bash
 pip install -r requirements.txt
 
-4. Executar a aplicação localmente (sem Docker)
+4. Rodar a aplicação (sem Docker)
+
+bash
 flask run
+A aplicação ficará disponível em: [http://localhost:5000](http://localhost:5000) 
 
+5. Rodar a aplicação com Docker 🐳
+bash
 
-A API ficará acessível em:
-http://localhost:5000
-
-5. Subir a aplicação via Docker 🐳
-# Criar a imagem
+# Build da imagem
 docker build -t flask-mvc-api .
 
-# Iniciar o container
+# Rodar o container
 docker run -p 5000:5000 flask-mvc-api
+--- ## 📖 Documentação da API (Swagger) Após iniciar a aplicação, acesse: 👉 [http://localhost:5000/apidocs](http://localhost:5000/apidocs) Lá você verá todos os endpoints organizados. ---
 
-📖 Acesso à Documentação (Swagger)
+📌 **Endpoints Principais**
 
-Depois de iniciar a API, abra:
-👉 http://localhost:5000/apidocs
+**Professores (/professores)**
 
-Ali estarão listados todos os endpoints e suas descrições.
+GET /professores → Lista todos os professores
+POST /professores → Cria um professor
+PUT /professores/{id} → Atualiza um professor existente
+DELETE /professores/{id} → Remove um professor
 
-📌 Endpoints Principais
-Professores (/professores)
+**Turmas (/turmas)**
 
-GET /professores → Consulta todos os professores
+GET /turmas → Lista todas as turmas
+POST /turmas → Cria uma nova turma
+PUT /turmas/{id} → Atualiza informações da turma
+DELETE /turmas/{id} → Exclui uma turma
 
-POST /professores → Adiciona um novo professor
+**Alunos (/alunos)**
 
-PUT /professores/{id} → Edita um professor existente
-
-DELETE /professores/{id} → Exclui um professor
-
-Turmas (/turmas)
-
-GET /turmas → Retorna a lista de turmas
-
-POST /turmas → Registra uma turma
-
-PUT /turmas/{id} → Atualiza os dados de uma turma
-
-DELETE /turmas/{id} → Remove uma turma
-
-Alunos (/alunos)
-
-GET /alunos → Lista todos os alunos cadastrados
-
-POST /alunos → Cadastra um aluno novo
-
-PUT /alunos/{id} → Altera os dados de um aluno
-
-DELETE /alunos/{id} → Exclui um aluno
+GET /alunos → Lista todos os alunos
+POST /alunos → Cria um novo aluno
+PUT /alunos/{id} → Atualiza um aluno
+DELETE /alunos/{id} → Remove um aluno
