@@ -1,35 +1,37 @@
-🎯 **Projeto: API de Gerenciamento Escolar**
+
+# 🎯 **Projeto: API de Gerenciamento Escolar**
 
 Este repositório apresenta uma **API REST** desenvolvida com **Flask**, estruturada no padrão **MVC**, oferecendo CRUD para Professores, Turmas e Alunos. A aplicação usa **SQLite** através do **SQLAlchemy**, possui documentação automática com **Swagger (Flasgger)** e pode ser executada em ambiente **Docker**.
 
 Para criar uma turma é obrigatório existir pelo menos um professor.
-
 Para cadastrar um aluno é necessário já haver uma turma criada.
 
-🌸 **Integrantes**
+---
 
-Alessandra Shiguemori | 2404075
+# 🌸 **Integrante**
 
-🛠️ **Tecnologias utilizadas**
+**Alessandra Shiguemori | 2404075**
 
-- Flask
+---
 
-- Flask-SQLAlchemy
+# 🛠️ **Tecnologias utilizadas**
 
-- Flasgger (Swagger UI)
+* **Flask**
+* **Flask-SQLAlchemy**
+* **Flasgger (Swagger UI)**
+* **SQLite**
+* **Docker**
 
-- SQLite
+---
 
-- Docker
+# 📂 **Estrutura do Projeto (MVC)**
 
-📂 **Estrutura do Projeto (MVC)**
-
-```txt 
+```txt
 /projeto
 │── app.py                # Arquivo principal da aplicação
-│── requirements.txt       # Dependências
-│── Dockerfile             # Configuração Docker
-│── /model                 # Modelos e banco de dados (SQLAlchemy)
+│── requirements.txt      # Dependências
+│── Dockerfile            # Configuração Docker
+│── /model                # Modelos e banco de dados (SQLAlchemy)
 │    ├── database.py
 │    ├── professor.py
 │    ├── turma.py
@@ -47,66 +49,86 @@ Alessandra Shiguemori | 2404075
 └── README.md              # Documentação
 ```
 
-🚀 **Como rodar o projeto**
+---
 
-1. Clone o repositório
+# 🚀 **Como rodar o projeto**
 
-bash
+## **1. Clone o repositório**
+
+```bash
 git clone https://github.com/foxczie/flask-academic-crud.git
 cd flask-mvc-api
+```
 
-2. Criar e ativar ambiente virtual (opcional, se não for usar Docker)
+## **2. Criar e ativar ambiente virtual (opcional, se não for usar Docker)**
 
-bash
+```bash
 python -m venv venv
 source venv/bin/activate  # Linux/Mac
 venv\Scripts\activate     # Windows
+```
 
-3. Instalar dependências
+## **3. Instalar dependências**
 
-bash
+```bash
 pip install -r requirements.txt
+```
 
-4. Rodar a aplicação (sem Docker)
+## **4. Rodar a aplicação (sem Docker)**
 
-bash
+```bash
 flask run
-A aplicação ficará disponível em: [http://localhost:5000](http://localhost:5000) 
+```
 
-5. Rodar a aplicação com Docker 🐳
-bash
+A aplicação ficará disponível em:
+**[http://localhost:5000](http://localhost:5000)**
 
-**Build da imagem**
+## **5. Rodar a aplicação com Docker**
+
+### **Build da imagem**
+
+```bash
 docker build -t flask-mvc-api .
+```
 
-**Rodar o container**
+### **Rodar o container**
 
+```bash
 docker run -p 5000:5000 flask-mvc-api
+```
 
-📖 **Documentação da API (Swagger)**
+---
 
- Após iniciar a aplicação, acesse: 👉 [http://localhost:5000/apidocs](http://localhost:5000/apidocs) 
- Lá você verá todos os endpoints organizados. 
+# 📖 **Documentação da API (Swagger)**
 
-📌 **Endpoints Principais**
+Após iniciar a aplicação, acesse:
+👉 **[http://localhost:5000/apidocs](http://localhost:5000/apidocs)**
 
-**Professores (/professores)**
+Lá você verá todos os endpoints organizados.
 
-GET /professores → Lista todos os professores
-POST /professores → Cria um professor
-PUT /professores/{id} → Atualiza um professor existente
-DELETE /professores/{id} → Remove um professor
+---
 
-**Turmas (/turmas)**
+# 📌 **Endpoints Principais**
 
-GET /turmas → Lista todas as turmas
-POST /turmas → Cria uma nova turma
-PUT /turmas/{id} → Atualiza informações da turma
-DELETE /turmas/{id} → Exclui uma turma
+## **Professores (`/professores`)**
 
-**Alunos (/alunos)**
+* **GET /professores** → Lista todos os professores
+* **POST /professores** → Cria um professor
+* **PUT /professores/{id}** → Atualiza um professor existente
+* **DELETE /professores/{id}** → Remove um professor
 
-GET /alunos → Lista todos os alunos
-POST /alunos → Cria um novo aluno
-PUT /alunos/{id} → Atualiza um aluno
-DELETE /alunos/{id} → Remove um aluno
+## **Turmas (`/turmas`)**
+
+* **GET /turmas** → Lista todas as turmas
+* **POST /turmas** → Cria uma nova turma
+* **PUT /turmas/{id}** → Atualiza informações da turma
+* **DELETE /turmas/{id}** → Exclui uma turma
+
+## **Alunos (`/alunos`)**
+
+* **GET /alunos** → Lista todos os alunos
+* **POST /alunos** → Cria um novo aluno
+* **PUT /alunos/{id}** → Atualiza um aluno
+* **DELETE /alunos/{id}** → Remove um aluno
+
+
