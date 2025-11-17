@@ -24,6 +24,7 @@ Alessandra Shiguemori | 2404075
 
 📂 **Estrutura do Projeto (MVC)**
 
+```txt 
 /projeto
 │── app.py                # Arquivo principal da aplicação
 │── requirements.txt       # Dependências
@@ -44,6 +45,7 @@ Alessandra Shiguemori | 2404075
 │── /static                # Arquivos bootstrap
 │── /templates             # Templates HTML
 └── README.md              # Documentação
+```
 
 🚀 **Como rodar o projeto**
 
