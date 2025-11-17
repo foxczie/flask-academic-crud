@@ -76,12 +76,17 @@ A aplicação ficará disponível em: [http://localhost:5000](http://localhost:5
 5. Rodar a aplicação com Docker 🐳
 bash
 
-# Build da imagem
+**Build da imagem**
 docker build -t flask-mvc-api .
 
-# Rodar o container
+**Rodar o container**
+
 docker run -p 5000:5000 flask-mvc-api
---- ## 📖 Documentação da API (Swagger) Após iniciar a aplicação, acesse: 👉 [http://localhost:5000/apidocs](http://localhost:5000/apidocs) Lá você verá todos os endpoints organizados. ---
+
+📖 **Documentação da API (Swagger)**
+
+ Após iniciar a aplicação, acesse: 👉 [http://localhost:5000/apidocs](http://localhost:5000/apidocs) 
+ Lá você verá todos os endpoints organizados. 
 
 📌 **Endpoints Principais**
 
